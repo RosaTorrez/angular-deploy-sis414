@@ -8,5 +8,11 @@ import { Component } from '@angular/core';
   styleUrl: './pelicula.component.css'
 })
 export class PeliculaComponent {
+  constructor(private visdeos:VideosService){
 
+  }
+OnInit(){
+  this.data =this.visdeos.getVideos();
+  console.log(this.data);
+}
 }
