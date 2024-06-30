@@ -1,0 +1,36 @@
+<div id="login">
+    <div id="reset" #closeReset>
+        <span style="right: 0;"><i class="fa-solid fa-xmark fa-xl" (click)="closeResetW()"></i></span>
+        <app-password style="margin-top: 5%;"></app-password>
+    </div>
+    <form [formGroup]="loginForm" (ngSubmit)="login()" class="container">
+        <span><i class="fa-solid fa-xmark fa-xl" (click)="home()"></i></span>
+        <div style="margin-top: 3%;">
+            <h1>Bienvenido ¡Aqui puedes registrarte!</h1>
+            <img src="https://firebasestorage.googleapis.com/v0/b/angularsis414.appspot.com/o/J_nuevo%2Furl%5B1%5D?alt=media&token=8fb7602e-9ef4-4a57-955a-8f2a8a8284c2" alt="" style="width: 150px; height: 70px;">
+        </div>
+        <div id="email">
+            <input type="email" placeholder="Email" formControlName="email">
+            <i class="fa-solid fa-envelope fa-lg"></i>
+        </div>
+        <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched" class="controls">
+            Se requiere un correo electrónico válido.
+        </div>
+        <div id="password">
+            <input type="password" placeholder="Password" formControlName="password">
+            <i class="fa-solid fa-lock fa-lg"></i>
+        </div>
+        <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="controls">
+            Se requiere contraseña.
+        </div>
+        <div id="recoverPassword">
+            <p (click)="openReset()">Olvidé mi contraseña</p>
+        </div>
+        <div id="button">
+            <button type="submit" [disabled]="loginForm.invalid">acceso</button>
+        </div>
+        <div id="newUser">
+            <a href="/createAcount"><p>No tengo cuenta. <b>Crear ahora</b></p></a>
+        </div>
+    </form>
+</div>

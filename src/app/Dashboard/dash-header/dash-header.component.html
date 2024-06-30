@@ -1,0 +1,19 @@
+<div id="head">
+    <div id="nav" [ngClass]="{'scrolled': isScrolled}">
+      <div class="topnav" id="myTopnav">
+          <a href="/home">
+            <img src="https://firebasestorage.googleapis.com/v0/b/angularsis414.appspot.com/o/J_nuevo%2Flogo.jpg?alt=media&token=7eece34f-5864-41a2-9f69-5be619cb8958" alt="" style="width: 150px; height: 70px; margin-top: 5px; padding-top: 2px;">
+          </a>
+          <a href="/home" class="active"><b>Home</b></a>
+          <a href="#news"><b>Películas</b></a>
+          <a href="/dashboard"><b>Dashboard</b></a>
+          <a *ngIf="user$ | async as user; else login" style="width: 150px;"><b style="display:flex; place-items: center; color: white;">   <i class="fa-solid fa-right-from-bracket fa-lg" (click)="logout()"></i>{{user.email}}</b></a>
+          <ng-template #login>
+            <a href="/login"><b>Iniciar sesión</b></a>
+          </ng-template>
+          <a href="javascript:void(0);" class="icon" (click)="toggleMenu()">
+            <i class="fa-solid fa-bars fa-xl" style="padding-top: 40px;"></i>
+          </a>
+      </div>
+    </div>
+  </div>

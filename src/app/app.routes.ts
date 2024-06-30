@@ -1,12 +1,20 @@
-import { Component, NgModule } from '@angular/core';
 import { Routes } from '@angular/router';
-import { MainComponent } from './pages/main/main.component';
-import { PeliculaComponent } from './pages/pelicula/pelicula.component';
-import { SerieComponent } from './app/serie/serie.component';
+import { LoginComponent } from './autentication/login/login.component';
+import { AcountComponent } from './autentication/acount/acount.component';
+import { RegisterComponent } from './Dashboard/register/register.component';
+import { PasswordComponent } from './autentication/password/password.component';
+import { HomeComponent } from './Pag_user/home/home.component';
+import { DashCruComponent } from './Pag_user/dash-cru/dash-cru.component';
+import { DashComponent } from './Pag_user/dash/dash.component';
 
 export const routes: Routes = [
-   {path:'',component:MainComponent},
-   {path:'peliculas', component : PeliculaComponent},
-   {path:'serie', component : SerieComponent}
-   
+  {path:'',redirectTo: '/home',pathMatch: 'full'},
+  {path:'dashboard', component: DashComponent},
+  {path:'home', component: HomeComponent},
+  {path: 'login', component: LoginComponent},
+  {path: 'createAcount',component: AcountComponent},
+  {path: 'addMovie', component: RegisterComponent},
+  {path: 'reset', component: PasswordComponent},
+  {path: 'crud', component: DashCruComponent }
+ 
 ];

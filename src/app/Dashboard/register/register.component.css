@@ -1,0 +1,112 @@
+#form{
+    color: white;
+    text-align: center;
+}
+.container{
+    background: linear-gradient(to bottom, rgba(92, 14, 14, 0.8),rgba(2, 18, 39, 0.8), rgba(1, 11, 24, 0.8));
+    width: 600px;
+    display: grid;
+    place-items: center;
+    border: 1px solid white;
+    border-radius: 20px;
+    padding: 8% 0 8% 0;
+    padding: 5% 0 5% 0;
+    
+}
+h1{
+    text-align: center;
+}
+p{
+    color: white;
+    font-size: 1em;
+    text-align: center;
+}
+.in{
+    border-bottom: 2px solid white;
+    width: 70%;
+    margin-top: 10%;
+    padding: 4px;
+    display: flex;
+    justify-content: center;
+    place-items: center;
+    height: 35px;
+    border-radius: 10px;
+    background: rgba(158, 190, 238, 0.1);
+    
+}
+input{
+    width: 93%;
+    background: rgba(1, 15, 36, 0);
+    border: none;
+    color: white;
+    font-size: 1em;
+    padding: 1%;
+}
+.desc{
+    width: 71%;
+    margin-top: 10%;
+    margin-bottom: 0;
+}
+textarea{
+    background: rgba(1, 15, 36, 0);
+    height: 100px;
+    color: white;
+    font-size: 1em;
+    border-radius: 10px;
+    width: 100%;
+    padding: 3px;
+}
+input::placeholder{
+    color: white;
+}
+input:focus {
+    outline: none; /* Asegúrate de que no haya contorno */
+    border: none; /* Asegúrate de que no haya borde */
+    box-shadow: none; /* Asegúrate de que no haya sombra */
+}
+textarea:focus{
+    outline: none;
+}
+#button{
+    width: 100%;
+    display: grid;
+    place-items: center;
+}
+.in:hover{
+    border: 1px solid white;
+    border-radius: 10px;
+    transition: 0.5s;
+    background: rgba(255, 255, 255, 0.2);
+}
+#submit{
+    
+    margin-top: 10%;
+    height: 40px;
+    width: 70%;
+    border-radius: 30px;
+    font-size: 1em;
+}
+#submit:hover{
+    border: none;
+    box-shadow: 0 0 10px white;
+    transition: 0.5s;
+    cursor: pointer;
+}
+#newUser{
+    margin: 5% 0 8% 0;
+}
+
+@media (max-width: 700px){
+    .container{
+        width: 90%;
+    
+    }
+    #form{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+}
+p:hover{
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
