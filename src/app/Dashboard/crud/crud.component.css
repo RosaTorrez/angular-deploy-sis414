@@ -1,10 +1,19 @@
 img{
-    width: 30px;
+    width: 50px;
     height: 50px;
     border-radius: 50%;
 }
 h1{
     text-align: center;
+}
+p{
+    display: inline;
+    position: relative;
+    margin: 10%;
+    padding: 5px;
+    margin-left: 0;
+    padding-left: 0;
+    color: rgb(236, 73, 73);
 }
 #list{
     overflow: auto;
@@ -13,19 +22,8 @@ h1{
     place-items: center;
 }
 table{
-    width: 100%;
+    width: 80%;
     font-size: 11.5px;
-}
-#top{
-    display: inline-block;
-    width: 100%;
-    margin-bottom: 0%;
-}
-#addMovie{
-    height: 40px;
-    width: 20%;
-    border-radius: 10px;
-    background-color: #c55564;
 }
 
 #search{
@@ -44,25 +42,27 @@ table{
     border: 1px solid rgba(128, 14, 14, 0.5);
 }
 #search input{
-    width: 90%;
+    width: 80%;
     height: 95%;
     border: none;
 }
 #search input:focus{
     outline: none;
 }
-p{
-    display: inline;
-    position: relative;
-    margin: 2%;
-    padding: 5px;
-    margin-left: 0;
-    padding-left: 0;
-    color: rgb(236, 73, 73);
 
+#top{
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 0%;
+}
+#addMovie{
+    height: 60px;
+    width: 20%;
+    border-radius: 10px;
+    background-color: #c22136;
 }
 thead tr{
-    height: 30px;
+    height: 90px;
 }
 thead td{
     display: flex;
@@ -86,12 +86,10 @@ td{
 }
 
 tr{
-    height: 60px;
+    height: 80px;
     display: flex;
     padding: 10px;
     border-bottom: 1.5px solid rgba(100, 96, 96, 0.5);
-    
-    
 }
 .title{
     width: 20%;
@@ -110,7 +108,7 @@ tr{
     justify-content: left;
 }
 .poster{
-    width: 7%;
+    width: 8%;
 }
 .actions{
     width: 10%;

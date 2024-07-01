@@ -6,11 +6,16 @@
           </a>
           <a href="/home" class="active"><b>Home</b></a>
           <a href="#news"><b>Películas</b></a>
-          <a href="/dashboard"><b>Dashboard</b></a>
-          <a *ngIf="user$ | async as user; else login" style="width: 150px;"><b style="display:flex; place-items: center; color: white;">   <i class="fa-solid fa-right-from-bracket fa-lg" (click)="logout()"></i>{{user.email}}</b></a>
-          <ng-template #login>
-            <a href="/login"><b>Iniciar sesión</b></a>
-          </ng-template>
+          <a href="/dashboard" *ngIf="admin() == 'rosatorrezquispe23@gmail.com'"><b>Dashboard</b></a>
+      <a style="cursor: pointer;">
+        <b style="display: flex; align-items: center; color: rgb(255, 255, 255);">
+          <span *ngIf="log">
+            {{ name}}
+            <i class="fa-solid fa-right-from-bracket fa-lg" (click)="logout()"></i>
+          </span>
+          <span *ngIf="!log" (click)="singIn()">Login</span>
+        </b>
+      </a>
           <a href="javascript:void(0);" class="icon" (click)="toggleMenu()">
             <i class="fa-solid fa-bars fa-xl" style="padding-top: 40px;"></i>
           </a>

@@ -1,63 +1,85 @@
-#form{
-    color: white;
+#llenar{
+    color: rgb(214, 26, 85);
     text-align: center;
 }
-.container{
-    background: linear-gradient(to bottom, rgba(92, 14, 14, 0.8),rgba(2, 18, 39, 0.8), rgba(1, 11, 24, 0.8));
-    width: 600px;
-    display: grid;
-    place-items: center;
-    border: 1px solid white;
-    border-radius: 20px;
-    padding: 8% 0 8% 0;
-    padding: 5% 0 5% 0;
-    
-}
+
 h1{
+    margin-top: 3%;
     text-align: center;
 }
 p{
-    color: white;
+    color:rgb(75, 47, 50);
     font-size: 1em;
     text-align: center;
 }
+#button{
+    width: 100%;
+    display: grid;
+    place-items: center;
+}
+.container{
+    background: rgb(255, 255, 255);
+    width: 550px;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(165, 21, 21, 0.897);
+    border-radius: 20px;
+    padding: 0 0 5% 0;
+    
+}
+span{
+    position: relative;
+    width: 100%;
+    padding: 0;
+}
+span i{
+    position: absolute;
+    right: 0%;
+    top: 0%;
+    margin: 2%;
+}
+span i:hover{
+    color: red;
+    cursor: pointer;
+}
+
 .in{
-    border-bottom: 2px solid white;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.075);
     width: 70%;
-    margin-top: 10%;
+    margin-top: 3%;
     padding: 4px;
     display: flex;
     justify-content: center;
     place-items: center;
     height: 35px;
     border-radius: 10px;
-    background: rgba(158, 190, 238, 0.1);
+    background: rgba(0, 0, 0, 0);
     
 }
 input{
     width: 93%;
     background: rgba(1, 15, 36, 0);
     border: none;
-    color: white;
+    color: rgb(0, 0, 0);
     font-size: 1em;
     padding: 1%;
 }
 .desc{
     width: 71%;
-    margin-top: 10%;
+    margin-top: 3%;
     margin-bottom: 0;
 }
 textarea{
     background: rgba(1, 15, 36, 0);
-    height: 100px;
-    color: white;
+    height: 125px;
+    color: rgb(0, 0, 0);
     font-size: 1em;
     border-radius: 10px;
     width: 100%;
     padding: 3px;
 }
 input::placeholder{
-    color: white;
+    color: rgb(0, 0, 0);
 }
 input:focus {
     outline: none; /* Asegúrate de que no haya contorno */
@@ -67,20 +89,11 @@ input:focus {
 textarea:focus{
     outline: none;
 }
-#button{
-    width: 100%;
-    display: grid;
-    place-items: center;
-}
-.in:hover{
-    border: 1px solid white;
-    border-radius: 10px;
-    transition: 0.5s;
-    background: rgba(255, 255, 255, 0.2);
-}
+
+
 #submit{
     
-    margin-top: 10%;
+    margin-top: 5%;
     height: 40px;
     width: 70%;
     border-radius: 30px;
@@ -88,24 +101,21 @@ textarea:focus{
 }
 #submit:hover{
     border: none;
-    box-shadow: 0 0 10px white;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.178);
     transition: 0.5s;
     cursor: pointer;
-}
-#newUser{
-    margin: 5% 0 8% 0;
 }
 
 @media (max-width: 700px){
     .container{
-        width: 90%;
-    
+        width: 85%;
     }
     #form{
         width: 100%;
-        display: flex;
-        justify-content: center;
+        display: grid;
+        place-items: center;
     }
+    
 }
 p:hover{
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);

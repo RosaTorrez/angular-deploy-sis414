@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, HostListener } from '@angular/core';
 import { AuthService } from '../../auth/auth.service';
-import { Observable } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { User } from '@angular/fire/auth';
 import { Router } from '@angular/router';
 
@@ -13,13 +13,19 @@ import { Router } from '@angular/router';
   styleUrl: './dash-header.component.css'
 })
 export class DashHeaderComponent {
-
   url: string ='https://angularsis414-default-rtdb.firebaseio.com/';
-  email: string = '';
   loggedInUserEmail: string | null = null;
-  user: any = null;
+  name: string | null = null;
+  log: boolean | null = null;
   errorMessage: string | null = null;
 
+  constructor(
+    private authService: AuthService, 
+    private router: Router
+  ) {
+    this.userState$ = new BehaviorSubject<User | null>(null);
+    this.user$ = this.userState$.asObservable();
+  }
   toggleMenu(): void {
     const x = document.getElementById("myTopnav");
     if (x !== null) {
@@ -35,7 +41,6 @@ export class DashHeaderComponent {
   @HostListener('window:scroll', [])
   onWindowScroll() {
     const scrollPosition = window.scrollY;
-
     if (scrollPosition > 200) {
       this.isScrolled = true;
     } else {
@@ -43,27 +48,50 @@ export class DashHeaderComponent {
     }
   }
   user$: Observable<User | null>;
+  private userState$: BehaviorSubject<User | null>;
 
-  constructor(private authService: AuthService, private router: Router) {
-    this.user$ = this.authService.getCurrentUser();
+  ngOnInit(): void {
+    this.authService.getCurrentUser().subscribe(user => {
+      this.userState$.next(user);
+      if (user && user.email) {
+        this.loggedInUserEmail = user.email;
+        this.log = true;
+        this.searchUser();
+      } else {
+        this.loggedInUserEmail = null;
+        this.log = false;
+      }
+    });
   }
 
-  ngOnInit():void {
-    this.loggedInUserEmail = this.authService.getCurrentUserEmail();
-    this.searchUser();
+  admin(){
+    return this.loggedInUserEmail;
   }
 
   logout() {
     this.authService.logout().subscribe(() => {
-      this.router.navigate(['/login']);
+      //this.router.navigate(['/login']);
+      this.log = false;
+      this.name = null;
     });
   }
+  singIn(){
+    this.router.navigate(['/login']);
+  }
+
   async searchUser() {
-    const resp = await fetch(`${this.url}users.json`);
-    const data = await resp.json();
-    for(let key of data){
-      
-    console.log(data[key]);
+    try {
+      const resp = await fetch(`${this.url}users.json`);
+      const data = await resp.json();
+      console.log(data); // Debugging: Log the API response
+      for (let key in data) {
+        if (data[key].email.toLowerCase() === this.loggedInUserEmail?.toLocaleLowerCase()) {
+          this.name = data[key].name;
+          break; // Exit loop once the user is found
+        }
+      }
+    } catch (error) {
+      console.error('Error fetching user data:', error);
     }
   }
 }

@@ -1,39 +1,45 @@
 #nav{
     display: flex;
-    background-color: #fff;
+    background-color: #d1a9a9;
     position: fixed;
     width: 20%;
     font-size: 1em;
     border-radius: 5px;
 }
-
+.dash{
+    padding: 5%;
+    margin: 5%;
+}
 #menu{
     height: 100vh;
     width: 100%;
     padding: 8px;
     display: block;
 }
-
+a{
+    text-decoration: none;
+    color: rgb(199, 199, 211);
+}
 #icon{
     display: none;
-    color: white;
+    color: rgb(15, 15, 15);
     padding: 0%;
 }
 
 #icon i:hover{
     cursor: pointer;
-    box-shadow: 0 0 5px white;
+    box-shadow: 0 0 5px rgb(7, 7, 7);
 }
 
 #logo{
-    border-bottom: 2px solid gray;
+    border-bottom: 20px solid rgba(128, 128, 128, 0);
 }
 .dash{
     padding: 5%;
     margin: 5%;
 }
 .dash div:hover{
-    background-color: aquamarine;
+    background-color: rgb(199, 196, 211);
     border-radius: 20px;
     padding: 10px;
     transition: 0.2s;
@@ -47,24 +53,10 @@
 }
 a{
     text-decoration: none;
-    color: rgb(65, 65, 233);
+    color: rgb(182, 18, 119);
 }
 
 @media (max-width: 1000px){
-    /*#icon{
-        height: 100vh;
-        display: grid;
-        place-items:center;
-        justify-content: left;
-        width: 0;
-    }
-    #nav{
-        width: 0%;
-    }
-    #menu{
-        display: none;
-        width: 100%;
-    }*/
     #nav{
         width: 70%;
     }

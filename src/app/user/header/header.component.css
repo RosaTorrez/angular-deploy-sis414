@@ -1,69 +1,69 @@
-#head{
-  position: fixed;
-  display: block;
-  width: 100%;
-  z-index: 1;
-}
 #nav {
     margin: 0;
+    width: 100%;
+    height: 70px;
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 70px;
-    transition: background-color 0.5s ease-in-out; /* Añadimos una transición suave */
+    transition: background-color 0.5s ease-in-out; 
+    /*  una transición suave */
   }
   
-  .topnav {
+.nagevation {
     width: 100%;
-    display: flex;
     align-items: center;
-    justify-content: space-between; /* Distribuye los elementos equitativamente */
+    justify-content: space-between; 
+    display: flex;
+    /* Distribuye los elementos equitativamente */
     
-    box-shadow: inset 0px 50px 45px rgba(1, 15, 36, 0.7);/* Fondo inicial transparente */
+    box-shadow: inset 0px 50px 45px rgba(168, 7, 74, 0.7);
     position: relative;
-    z-index: 1; /* Asegura que esté encima del fondo */
-    transition: background-color 0.5s ease-in-out; /* Transición suave */
-  }
-  
-  .topnav a {
+    z-index: 1;
+    transition: background-color 0.5s ease-in-out; 
+}
+#head{
+    position: fixed;
+    display: block;
+    width: 100%;
+    z-index: 1;
+}
+.nagevation a {
+    margin: 0 5% 0 5%;
+    padding-top: 0;
     display: inline-block;
     color: #f2f2f2;
+    font-size: 17px;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    font-size: 17px;
-    margin: 0 5% 0 5%;
-    padding-top: 0;
+    
+}
+.nagevation .icon {
+  display: none;
+}
+  .nagevation a:hover {
+    color: rgb(255, 60, 0);
   }
   
-  .topnav a:hover {
+  .nagevation a.active {
     color: rgb(255, 196, 0);
-  }
-  
-  .topnav a.active {
-    color: rgb(255, 196, 0);
-  }
-  
-  .topnav .icon {
-    display: none;
   }
   
   @media screen and (max-width: 1000px) {
     #nav{
       height: auto;
     }
-    .topnav{
+    .nagevation{
       display: block;
-      box-shadow: inset 0px 50px 40px rgba(1, 15, 36, 0.5);
+      box-shadow: inset 0px 50px 40px rgba(218, 162, 8, 0.842);
     }
-    .topnav a:not(:first-child) {
+    .nagevation a:not(:first-child) {
       display: none;
       padding-left: 45px;
     }
-    .topnav a.icon {
+    .nagevation a.icon {
       float: right;
       display: block;
     }
@@ -71,16 +71,16 @@
   
   @media screen and (max-width: 1000px) {
     
-    .topnav.responsive {
+    .nagevation.responsive {
       position: relative;
-      background: rgba(1, 15, 36, 0.8);
+      background: rgba(201, 50, 12, 0.8);
     }
-    .topnav.responsive .icon {
+    .nagevation.responsive .icon {
       position: absolute;
       right: 0;
       top: 0;
     }
-    .topnav.responsive a {
+    .nagevation.responsive a {
       float: none;
       display: block;
       text-align: left;
@@ -91,8 +91,8 @@
   }
   
   .scrolled {
-    background-color: rgba(1, 15, 36, 0.9); /* Cambia el fondo al desplazar */
-    box-shadow: inset 0px 50px 35px rgba(1, 15, 36, 0.9); /* Ajusta la sombra al desplazar */
+    background-color: rgba(185, 18, 6, 0.9); /* Cambia el fondo al desplazar */
+    box-shadow: inset 0px 50px 35px rgba(219, 10, 10, 0.9); 
   }
   
   

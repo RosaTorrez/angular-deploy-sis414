@@ -1,50 +1,23 @@
-<div class="main">
-    <div class="slider">
-        <div class="slideshow-container">
-            <div class="mySlides">
-              <img src="https://cdn.computerhoy.com/sites/navi.axelspringer.es/public/media/image/2022/12/hbo-max-series-peliculas-estreno-enero-2023-2910446.jpg">
-            </div>
+<body>
 
-            <div class="mySlides">
-              <img src="https://image.tmdb.org/t/p/original//otfoeC96neoOdA4HqsX06OWuzE9.jpg">
-            </div>
-            
-            <div class="mySlides">
-              <img src="https://image.tmdb.org/t/p/original//mIBG74mhGEJnBubhYLkCtvplcNr.jpg">
-            </div>
-            <div class="mySlides">
-              <img src="https://image.tmdb.org/t/p/original//3TNSoa0UHGEzEz5ndXGjJVKo8RJ.jpg">
-            </div>
-
-            <div class="mySlides">
-              <img src="https://image.tmdb.org/t/p/original//6ApZUenk0DREBMzpthcYC3g1mhg.jpg">
-            </div>
-            
-            <div class="mySlides">
-              <img src="https://image.tmdb.org/t/p/original//9c6YcIUJ1hxoCnoPs3HU4Bgy6Uj.jpg">
-            </div>
-            
-            <a class="prev" (click)="plusSlides(-1)">❮</a>
-            <a class="next" (click)="plusSlides(1)">❯</a>
-            
-        </div>
+	<main>
+		
+    <div id="welcomeContent">
+      <div id="welcome">
+        <h1><b>¡Bienvenido a tus PELICULAS!</b> <br></h1>
+        <h1 style="color: gray;">Tu destino definitivo para disfrutar del mejor cine.
+                      Descubre una vasta colección de películas de todos los géneros, desde los
+                        clásicos más queridos hasta los estrenos más recientes. Navega, selecciona
+                        y sumérgete en una experiencia cinematográfica incomparable.
+        </h1>
         <br>
-        <div class="dots">
-            <span class="dot" (click)="currentSlide(1)"></span> 
-            <span class="dot" (click)="currentSlide(2)"></span> 
-            <span class="dot" (click)="currentSlide(3)"></span> 
-            <span class="dot" (click)="currentSlide(4)"></span> 
-            <span class="dot" (click)="currentSlide(5)"></span> 
-            <span class="dot" (click)="currentSlide(6)"></span> 
-        </div>
-    </div>
-    <h1 style="text-align: center; color: white; font-size: 2em; margin-bottom: 5%;">POPULAR MOVIES</h1>
-    <div id="movies" class="movie-list">
-      <div class="content" *ngFor="let movie of movies">
-        <div class="container">
-          <img [src]="'https://image.tmdb.org/t/p/w500' + movie.poster_path" alt="Avatar" class="image">
-        <div class="overlay">{{movie.title}}</div>
+        
+        <h1 style="color: white;">¡Haz clic, AQUÍ!</h1>
+        <br>
       </div>
-    </div>
+      <button (click)="redirect()"><b>Empezar</b></button>
   </div>
-</div>
+	</main>
+	
+	
+</body>

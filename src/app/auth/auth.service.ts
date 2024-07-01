@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, authState } from '@angular/fire/auth';
-import { Observable, from } from 'rxjs';
-import { UserCredential, sendPasswordResetEmail, User, onAuthStateChanged, getAuth } from 'firebase/auth'; // Importa User desde firebase/auth
+import { Auth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, authState, signInWithPopup } from '@angular/fire/auth';
+import { Observable, from, map } from 'rxjs';
+import { UserCredential, sendPasswordResetEmail, User, onAuthStateChanged, getAuth, GoogleAuthProvider } from 'firebase/auth'; 
+// Importa User desde firebase/auth
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 
 @Injectable({
@@ -43,6 +44,15 @@ export class AuthService {
 
   getCurrentUserEmail(): string | null {
     return this.userEmail;
+  }
+  isAuthenticated(): Observable<boolean> {
+    return this.getCurrentUser().pipe(
+      map(user => !!user)
+    );
+  }
+  signInWithGoogle(): Observable<UserCredential> {
+    const provider = new GoogleAuthProvider();
+    return from(signInWithPopup(this.auth, provider));
   }
 
 }

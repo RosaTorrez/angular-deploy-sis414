@@ -29,15 +29,16 @@ export class LoginComponent {
       password: ['', [Validators.required]]
     });
   }
-
+  onInit(){
+  }
   login() {
     if (this.loginForm.valid) {
       const { email, password } = this.loginForm.value;
 
       this.authService.loginWithEmail(email, password).subscribe((userCredential: UserCredential) => {
         console.log('Login exitoso:', userCredential);
-        this.router.navigate(['/home']); 
-        // Redirigir después de inicio de sesión exitoso
+        this.router.navigate(['/movies']); 
+        // esta seccion hace que te Redireccione haci la pelicula
       }, (error: any) => {
         console.error('Error en el inicio de sesión:', error);
         alert('Error en el inicio de sesión');
@@ -52,6 +53,17 @@ export class LoginComponent {
       this.closeReset.nativeElement.style.display = 'block';
   }
   home(){
-    this.router.navigate(['/home']);
+    this.router.navigate(['/movies']);
+  }
+  loginWithGoogle() {
+    this.authService.signInWithGoogle().subscribe(
+      res => {
+        console.log('Logged in with Google:', res);
+        this.router.navigate(['/movies']);
+      },
+      error => {
+        console.error('Error logging in with Google:', error);
+      }
+    );
   }
 }

@@ -7,7 +7,10 @@
         <span><i class="fa-solid fa-xmark fa-xl" (click)="home()"></i></span>
         <div style="margin-top: 3%;">
             <h1>Bienvenido ¡Aqui puedes registrarte!</h1>
-            <img src="https://firebasestorage.googleapis.com/v0/b/angularsis414.appspot.com/o/J_nuevo%2Furl%5B1%5D?alt=media&token=8fb7602e-9ef4-4a57-955a-8f2a8a8284c2" alt="" style="width: 150px; height: 70px;">
+            
+            <img src="https://firebasestorage.googleapis.com/v0/b/angularsis414.appspot.com/o/J_nuevo%2Flogo.jpg?alt=media&token=7eece34f-5864-41a2-9f69-5be619cb8958" alt="" style="width: 150px; height: 70px;">
+            <img src="https://firebasestorage.googleapis.com/v0/b/angularsis414.appspot.com/o/J_nuevo%2Flogo.jpg?alt=media&token=7eece34f-5864-41a2-9f69-5be619cb8958" alt="" style="width: 150px; height: 70px;">
+            <img src="https://firebasestorage.googleapis.com/v0/b/angularsis414.appspot.com/o/J_nuevo%2Flogo.jpg?alt=media&token=7eece34f-5864-41a2-9f69-5be619cb8958" alt="" style="width: 150px; height: 70px;">
         </div>
         <div id="email">
             <input type="email" placeholder="Email" formControlName="email">
@@ -28,6 +31,9 @@
         </div>
         <div id="button">
             <button type="submit" [disabled]="loginForm.invalid">acceso</button>
+        </div>
+        <div id="google" (click)="loginWithGoogle()">
+            <b>continuar con google</b>
         </div>
         <div id="newUser">
             <a href="/createAcount"><p>No tengo cuenta. <b>Crear ahora</b></p></a>

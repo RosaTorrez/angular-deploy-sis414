@@ -25,7 +25,8 @@ export class HeaderComponent {
   onWindowScroll() {
     const scrollPosition = window.scrollY;
 
-    if (scrollPosition > 200) { // Cambia el fondo después de desplazarse 100px
+    if (scrollPosition > 200) { 
+      // Cambia el fondo después de desplazarse 100px
       this.isScrolled = true;
     } else {
       this.isScrolled = false;

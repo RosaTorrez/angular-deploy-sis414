@@ -2,6 +2,10 @@ import { Component } from '@angular/core';
 import { HeaderComponent } from '../header/header.component';
 import { FooterComponent } from '../footer/footer.component';
 import { CommonModule } from '@angular/common';
+import { AuthService } from '../../auth/auth.service';
+import { BehaviorSubject } from 'rxjs';
+import { User } from '@angular/fire/auth';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-main',
@@ -13,43 +17,30 @@ import { CommonModule } from '@angular/common';
 export class MainComponent {
   slideIndex: number = 1;
   movies: any[] = [];
+  userState$: any;
+  user$: any;
+  loggedInUserEmail: string | null = null;
 
-  constructor() {}
-
- 
-
-  plusSlides(n: number): void {
-    this.showSlides(this.slideIndex += n);
+  constructor(private authService: AuthService, private router: Router) {
+    this.userState$ = new BehaviorSubject<User | null>(null);
+    this.user$ = this.userState$.asObservable();
   }
 
-  currentSlide(n: number): void {
-    this.showSlides(this.slideIndex = n);
+  ngOnInit(): void {
+    this.authService.getCurrentUser().subscribe(user => {
+      this.userState$.next(user);
+      if (user && user.email) {
+        this.loggedInUserEmail = user.email;
+      } else {
+        this.loggedInUserEmail = null;
+      }
+    });
   }
-
-  showSlides(n: number): void {
-    if (typeof document !== 'undefined') {
-      let i: number;
-      let slides: HTMLCollectionOf<Element> = document.getElementsByClassName("mySlides");
-      let dots: HTMLCollectionOf<Element> = document.getElementsByClassName("dot");
-      
-      if (slides.length === 0 || dots.length === 0) {
-        return; 
-        // Salir si no se encuentran elementos
-      }
-  
-      if (n > slides.length) { this.slideIndex = 1; }    
-      if (n < 1) { this.slideIndex = slides.length; }
-  
-      for (i = 0; i < slides.length; i++) {
-        (slides[i] as HTMLElement).style.display = "none";  
-      }
-  
-      for (i = 0; i < dots.length; i++) {
-        (dots[i] as HTMLElement).className = (dots[i] as HTMLElement).className.replace(" active", "");
-      }
-  
-      (slides[this.slideIndex-1] as HTMLElement).style.display = "block";  
-      (dots[this.slideIndex-1] as HTMLElement).className += " active";
+  redirect(){
+    if(this.loggedInUserEmail){
+      this.router.navigate(['/movies']);
+    }else{
+      this.router.navigate(['/login']);
     }
   }
 }

@@ -1,47 +1,3 @@
-
-#dashboard{
-    background-color: rgb(224, 105, 105);
-    color: white;
-    box-sizing: border-box;
-    border-radius: 5px;
-    padding-top: 3%;
-}
-#content{
-    margin-top: 3%;
-    display: flex;
-    width: 90%;
-    background: linear-gradient(to bottom, rgb(160, 20, 74), rgb(66, 3, 42), rgb(1, 10, 22));
-    border-radius: 10px;
-    box-sizing: border-box;
-    padding: 2%;
-}
-#table{
-    display: grid;
-    place-items: center;
-}
-p{
-    padding: 5px 20px 10px 20px;
-    text-align: justify;
-
-}
-.poster{
-    width: 20%;
-    display: grid;
-    place-content: center;
-}
-.poster img{
-    width: 150px;
-    height: 200px;
-    border-radius: 10px;
-}
-.poster:hover{
-    cursor: pointer;
-}
-.info{
-    display: grid;
-    width: 80%;
-
-}
 .buttons{
     display: grid;
     place-items: center;
@@ -56,13 +12,54 @@ p{
   height: 40px;
   border-radius: 20px;
 }
+p{
+    padding: 5px 20px 10px 20px;
+    text-align: justify;
+}
+.poster{
+    width: 20%;
+    display: grid;
+    place-content: center;
+}
+.poster img{
+    width: 150px;
+    height: 200px;
+    border-radius: 10px;
+}
+#dashboard{
+    background-color: rgb(139, 2, 36);
+    color: white;
+    box-sizing: border-box;
+    border-radius: 5px;
+    padding-top: 3%;
+}
+#content{
+    margin-top: 3%;
+    display: flex;
+    width: 90%;
+    background: linear-gradient(to bottom, rgb(255, 13, 86), rgb(158, 7, 32), rgb(131, 4, 4));
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 2%;
+}
+#table{
+    display: grid;
+    place-items: center;
+}
+.poster:hover{
+    cursor: pointer;
+}
 .edit{
-    background: #aa041a;
+    background: #aa7004;
 }
 .delete{
-    background: rgb(217, 255, 0);
+    background: red;
 }
+.info{
+    display: grid;
+    width: 80%;
 
+}
 #headMovies{
     text-align: center;
     display: flex;
@@ -72,9 +69,9 @@ p{
 #addMovie{
     width: 15%;
     border-radius: 10px;
-    background-color: rgb(229, 255, 0);
+    background-color: rgb(255, 196, 0);
     font-size: 1em;
-    border: 2px solid rgb(0, 0, 0);
+    border: 2px solid rgb(255, 0, 0);
 }
 #search{
     background: white;
@@ -98,7 +95,7 @@ p{
 }
 #search i:hover{
     cursor: pointer;
-    box-shadow: 0 0 10px rgb(19, 0, 9);
+    box-shadow: 0 0 10px rgb(182, 1, 10);
 }
 button:hover{
     cursor: pointer;

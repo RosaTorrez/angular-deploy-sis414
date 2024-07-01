@@ -7,7 +7,7 @@ import { AuthService } from '../../auth/auth.service';
 @Component({
   selector: 'app-password',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule],
+  imports: [CommonModule,ReactiveFormsModule,],
   templateUrl: './password.component.html',
   styleUrl: './password.component.css'
 })
@@ -29,13 +29,13 @@ export class PasswordComponent {
       const email = this.resetForm.value.email;
       this.authService.resetPassword(email).subscribe(
         () => {
-          alert('Se ha enviado un correo electrónico para restablecer tu contraseña.');
+          alert('Se envió un CORREO ELECTRONICO para restablecer tu contraseña.');
           this.resetForm.reset();
           this.router.navigate(['login'])
         },
         (error: any) => {
-          console.error('Error al enviar el correo electrónico de restablecimiento:', error);
-          alert('Ha ocurrido un error al enviar el correo electrónico de restablecimiento. Por favor, intenta nuevamente.');
+          console.error('ERROR al enviar el correo electrónico de restablecimiento:', error);
+          alert('Ha ocurrido un error al enviar el correo electrónico de restablecimiento. Por favor, intente una vez más.');
         }
       );
     }

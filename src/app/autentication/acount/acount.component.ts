@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { UserCredential } from '@angular/fire/auth';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -13,6 +13,10 @@ import { AuthService } from '../../auth/auth.service';
   styleUrl: './acount.component.css'
 })
 export class AcountComponent {
+  @ViewChild('names') names!: ElementRef;
+  @ViewChild('lastNames') lastNames!: ElementRef;
+  @ViewChild('emails') emails!: ElementRef;
+
   url = 'https://angularsis414-default-rtdb.firebaseio.com/';
   registerForm: FormGroup;
   name: string = ''
@@ -24,7 +28,7 @@ export class AcountComponent {
     private router: Router,
     private fb: FormBuilder,
   ) {
-    // Creamos el formulario con sus validaciones
+    // en aqui se crea el formulario con sus validaciones
     this.registerForm = this.fb.group({
       name: ['', [Validators.required]],
       lastName: ['', [Validators.required]],
@@ -50,7 +54,7 @@ export class AcountComponent {
         this.router.navigate(['/home']);
       }, error => {
         console.error('Error en el registro:', error);
-        // Aquí podrías manejar errores específicos, como mostrar un mensaje al usuario
+        // Aquí se puede  manejar los  errores específicos
       });
     }
   }
