@@ -33,7 +33,7 @@ app-dash-main{
     border-radius: 50px;
 }
 
-@media(max-width: 1000px){
+@media(max-width: 700px){
     #men{
         display: grid;
         z-index: 2;

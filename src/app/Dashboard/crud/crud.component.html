@@ -1,5 +1,4 @@
-<div style=" width: 100%; display: grid; place-items: center; background: #be0a22; height: 100%; border-radius: 5px; overflow-x: auto;" id="prin">
-   
+<div style=" width: 100%; display: grid; place-items: center; background: #000000; height: 100%; border-radius: 5px; overflow-x: auto;" id="prin">
     <div style=" width: 75%; background-color: white; height: auto; position: relative; border-radius: 40px; padding: 20px;" id="con">
         <h1><b>Esta sección es para poder hacer actualizaciones, o subir videos </b></h1>
         <div id="top">
@@ -25,7 +24,7 @@
                     <ng-container *ngFor="let movie of movies | keyvalue">
                         <tr *ngIf="searchMovies(movie.value.title)">
                           <td class="poster">
-                              <img [defaultImage]="movie.value.poster" [lazyLoad]="movie.value.poster" alt="">
+                              <img [src]="movie.value.poster" alt="">
                           </td>
                           <td class="title"><b>{{movie.value.title}}</b></td>
                           <td class="description"><p>{{movie.value.description}}</p></td>

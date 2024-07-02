@@ -3,14 +3,12 @@ import { Component,OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
 import { DatabaseServiceService } from '../../services/database/database.service.service';
-import { LazyLoadImageModule } from 'ng-lazyload-image';
 
 @Component({
   selector: 'app-crud',
   standalone: true,
   imports: [CommonModule, 
             FormsModule ,
-            LazyLoadImageModule
             ],
   templateUrl: './crud.component.html',
   styleUrl: './crud.component.css'

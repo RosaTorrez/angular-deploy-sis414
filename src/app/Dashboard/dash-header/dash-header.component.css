@@ -60,7 +60,7 @@
     }
     .topnav{
       display: block;
-      box-shadow: inset 0px 50px 40px rgba(1, 15, 36, 0.5);
+      box-shadow: inset 0px 50px 40px rgba(36, 1, 34, 0.5);
     }
     .topnav a:not(:first-child) {
       display: none;
