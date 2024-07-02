@@ -1,132 +1,182 @@
-.buttons{
-    display: grid;
-    place-items: center;
-    width: 15%;
-    padding: 0;
-    padding-right: 2% ;
-}
-.buttons button{
-  color: black;
-  border: 2px solid white;
-  width: 10px;
-  height: 10px;
-  border-radius: 20px;
-}
-p{
-    padding: 5px 20px 10px 20px;
-    text-align: justify;
-}
-.poster{
-    width: 25%;
-    display: grid;
-    place-content: center;
-}
-.poster img{
-    width: 190px;
-    height: 300px;
-    border-radius: 10px;
-}
-#dashboard{
+/* Estilos para el contenedor principal del dashboard */
+#dashboard {
+    margin-left: 2%;
+    padding: 20px;
     background-color: rgb(139, 2, 36);
     color: white;
-    box-sizing: border-box;
-    border-radius: 60px;
-    padding-top: 3%;
-}
-#content{
-    margin-top: 1%;
-    display: flex;
-    width: -0.01%;
-    background: linear-gradient(to bottom, rgb(199, 124, 146), rgb(158, 7, 32), rgb(131, 4, 4));
     border-radius: 10px;
-    box-sizing: border-box;
-    padding: 2%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow-x: hidden; /* Evitar scroll horizontal */
+    max-width: calc(100% - 2%); /* Ajustar ancho para evitar overflow */
 }
-#table{
-    display: grid;
-    place-items: center;
-}
-.poster:hover{
-    cursor: pointer;
-}
-.edit{
-    background: #aa7004;
-}
-.delete{
-    background: red;
-}
-.info{
-    display: grid;
-    width: 10%;
 
-}
-#headMovies{
+/* Estilo para el encabezado del dashboard */
+#dashboard h1 {
+    margin-bottom: 20px;
+    font-size: 1.5em;
     text-align: center;
+}
+
+/* Estilos para la sección de películas */
+#headMovies {
     display: flex;
-    justify-content: center;
-    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 10px;
 }
-#addMovie{
-    width: 15%;
-    border-radius: 10px;
-    background-color: rgb(255, 196, 0);
-    font-size: 1em;
-    border: 2px solid rgb(255, 0, 0);
-}
-#search{
+
+/* Estilos para el buscador de películas */
+#search {
     background: white;
-    padding: 5px;
-    width: 50%;
+    padding: 10px;
+    width: 100%;
+    max-width: 600px; /* Limitar ancho máximo del buscador */
     border-radius: 10px;
     display: flex;
-    justify-content: center;
-    place-items: center;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
-#search input{
+
+#search input {
     border: none;
-    width: 95%;
+    width: 100%;
     height: 40px;
     font-size: 1em;
+    padding: 5px;
 }
-#search input:focus{
-    border: none;
+
+#search input:focus {
     outline: none;
-    
 }
-#search i:hover{
+
+#search i {
+    margin-left: 10px;
+    color: #068550;
+}
+
+#search i:hover {
     cursor: pointer;
     box-shadow: 0 0 10px rgb(182, 1, 10);
 }
-button:hover{
-    cursor: pointer;
-    box-shadow: 0 0 5px white;
+
+/* Estilos para el botón de añadir película */
+#addMovie {
+    background-color: rgb(255, 196, 0);
+    border: 2px solid rgb(255, 0, 0);
+    color: black;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 1em;
+    transition: background-color 0.3s, color 0.3s;
+    margin-top: 10px;
 }
 
-@media(max-width: 1050px) {
-    #dashboard{
-        border-radius: 0;
-    }
-    #content{
-        width: 80%;
-        display: grid;
-        justify-content: center;
-        padding: 5% 0 5% 0;
-        box-sizing: border-box;
-    }
-    .poster{
-        width: 80%;
-        padding-left: 0;
-    }
-    .info{
-        width: 10%;
-        box-sizing: border-box;
-    }
-    .buttons{
-        display: flex;
-        place-content: center;
-        width: 10%;
-    }
-.poster img{
-    width: 20px; border-radius: 10px; height: 30px;
+#addMovie:hover {
+    background-color: rgb(255, 180, 0);
+    color: #fff;
 }
+
+/* Estilos para la tabla de contenido */
+#table {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: 1fr; /* Columna única por defecto */
+}
+
+/* Estilos para cada contenido de película */
+#content {
+    background: linear-gradient(to bottom, rgb(199, 124, 146), rgb(158, 7, 32), rgb(131, 4, 4));
+    border-radius: 10px;
+    box-sizing: border-box;
+    padding: 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+/* Estilos para el contenedor del póster de la película */
+.poster {
+    display: flex;
+    justify-content: center;
+    width: 150px;
+    height: 250px;
+    overflow: hidden; /* Evitar desbordamiento de imágenes */
+}
+
+.poster img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Estilos para la información de la película */
+.info {
+    display: grid;
+    width: 40%;
+
+}
+
+/* Estilos específicos para cada línea de información */
+.info p {
+    margin-bottom: 10px;
+    padding: 5px 0;
+}
+
+/* Estilo para los títulos de cada sección de información */
+.info p b {
+    color: #fff;
+}
+
+/* Estilos responsivos */
+@media (max-width: 1050px) {
+    /* Ajustar el ancho del dashboard */
+    #dashboard {
+        margin-left: 0;
+        padding: 10px;
+    }
+
+    /* Ajustar el diseño de headMovies */
+    #headMovies {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Ajustar el ancho del buscador */
+    #search {
+        max-width: 100%;
+    }
+
+    /* Asegurar que el botón de añadir película ocupe el 100% de ancho */
+    #addMovie {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    /* Ajustar la estructura del contenido para pantallas más pequeñas */
+    #content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .poster {
+        width: 80%;
+        height: auto; /* Ajustar la altura para mantener las proporciones */
+    }
+
+    .info {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    /* Asegurar que el tamaño de fuente del contenido se adapte */
+    #dashboard h1 {
+        font-size: 1.2em;
+    }
+
+    #search input {
+        height: 35px;
+        font-size: 0.9em;
+    }
 }

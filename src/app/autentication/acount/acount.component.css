@@ -1,7 +1,7 @@
 #acount{
     display: grid;
     place-content: center;
-    color: rgb(185, 14, 14);
+    color: rgb(163, 111, 111);
     background-color: rgb(22, 13, 1);
     height: 100vh;
 }
@@ -10,7 +10,7 @@
     width: 490px;
     display: grid;
     place-items: center;
-    border: 10px solid rgba(146, 113, 22, 0.76);
+    border: 10px solid rgba(240, 48, 14, 0.76);
     box-shadow: 0 0 5px black;
     border-radius: 20px;
     padding: 3% 0 5% 0;
@@ -67,7 +67,7 @@ input:focus {
     border: 2px solid rgb(146, 16, 16);
     border-radius: 10px;
     transition: 0.2s;
-    background: rgba(150, 165, 12, 0.247);
+    background: rgba(241, 140, 7, 0.247);
 }
 #button button{
     height: 40px;

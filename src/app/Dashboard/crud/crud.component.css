@@ -160,4 +160,234 @@ tr{
         margin: 0;
         padding: 0;
     }
+}img {
+    width: 70px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+h1 {
+    text-align: center;
+}
+
+p {
+    display: inline;
+    position: relative;
+    margin: 0;
+    padding: 5px;
+    color: rgb(236, 73, 73);
+}
+
+#list {
+    overflow-x: auto;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    padding-bottom: 10px; /* Asegura que el scroll horizontal no corte el contenido */
+}
+
+table {
+    width: 100%;
+    font-size: 11.5px;
+    border-collapse: collapse; /* Asegura que no haya espacio extra entre celdas */
+}
+
+thead tr {
+    height: 80px;
+}
+
+thead td {
+    display: flex;
+    justify-content: center;
+}
+
+table {
+    background: white;
+    border-radius: 60px;
+    padding: 3px;
+}
+
+thead tr {
+    border-radius: 5px;  
+}
+
+td {
+    border-spacing: 0;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+    justify-content: left;
+    margin: 0; /* Asegura que no haya espacio extra alrededor de las celdas */
+    padding: 5px; /* Ajuste para el espacio interno de las celdas */
+}
+
+tr {
+    height: 80px;
+    display: flex;
+    padding: 10px;
+    border-bottom: 1.5px solid rgba(100, 96, 96, 0.5);
+}
+
+.title {
+    width: 20%;
+}
+
+.description {
+    width: 40%;
+}
+
+.category {
+    width: 5%;
+}
+
+.video {
+    width: 17.5%;
+    margin-right: 10px;
+    overflow: hidden;
+    justify-content: left;
+}
+
+.poster {
+    width: 8%;
+}
+
+.actions {
+    width: 10%;
+    display: flex;
+    justify-content: center;
+}
+
+.actions button {
+    border-radius: 50%;
+    padding: 10px;
+    margin: 5px;
+    background-color: white;
+    border: 0.5px solid rgba(0, 0, 0, 0.5);
+}
+
+.actions span {
+    display: none;
+}
+
+.actions button:hover {
+    cursor: pointer;
+}
+
+.actions button:hover + span {
+    display: block;
+    position: absolute;
+    z-index: 2;
+    background: #fff;
+    padding: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#search {
+    float: right;
+    background-color: rgb(19, 17, 17);
+    border-radius: 5px;
+    width: 100%; /* Ajusta al 100% del contenedor */
+    max-width: 300px; /* Máximo ancho para que no sea demasiado grande */
+    height: 40px;
+    display: flex;
+    place-items: center;
+    padding: 5px;
+    border: 1px solid black;
+}
+
+#search:hover {
+    border: 1px solid rgba(128, 14, 14, 0.5);
+}
+
+#search input {
+    width: 100%;
+    height: 95%;
+    border: none;
+}
+
+#search input:focus {
+    outline: none;
+}
+
+#top {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 0%;
+}
+
+#addMovie {
+    height: 80px;
+    width: 100%; /* Cambiado a 100% para ajustar al contenedor */
+    max-width: 200px; /* Máximo ancho para evitar que sea demasiado grande */
+    border-radius: 10px;
+    background-color: #c22136;
+    color: white; /* Asegura que el texto sea visible */
+}
+
+#prin {
+    width: 100%;
+    display: grid;
+    place-items: center;
+    background: #000000;
+    height: 100%;
+    border-radius: 5px;
+    overflow-x: auto; /* Permite el scroll horizontal */
+}
+
+#con {
+    width: 100%;
+    background-color: white;
+    height: auto;
+    position: relative;
+    border-radius: 40px;
+    padding: 20px;
+    overflow-x: auto; /* Permite el scroll horizontal */
+}
+
+@media (max-width: 600px) {
+    #list {
+        display: block; /* Cambiado a block para evitar problemas de scroll */
+    }
+
+    td {
+        width: auto;
+        height: auto;
+    }
+
+    .actions {
+        width: 15%;
+    }
+
+    .poster {
+        width: 12.5%;
+    }
+
+    .description {
+        width: 10%;
+    }
+
+    #con {
+        overflow-x: auto;
+        margin: 2.5%;
+        width: 100%; /* Ajustado para que ocupe todo el ancho disponible */
+    }
+
+    #prin {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    #search {
+        float: none; /* Asegura que la búsqueda esté centrada */
+        width: 100%;
+        max-width: none; /* Desactivado max-width para pantallas pequeñas */
+    }
+
+    #addMovie {
+        width: 100%; /* Asegura que el botón no desborde */
+        max-width: none; /* Desactivado max-width para pantallas pequeñas */
+    }
 }
