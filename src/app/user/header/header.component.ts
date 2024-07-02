@@ -4,9 +4,9 @@ import { Component, HostListener } from '@angular/core';
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [HeaderComponent, CommonModule ],
+  imports: [CommonModule],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.css'
+  styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
   toggleMenu(): void {
@@ -19,17 +19,12 @@ export class HeaderComponent {
       }
     }
   }
+
   isScrolled = false;
 
   @HostListener('window:scroll', [])
   onWindowScroll() {
     const scrollPosition = window.scrollY;
-
-    if (scrollPosition > 200) { 
-      // Cambia el fondo después de desplazarse 100px
-      this.isScrolled = true;
-    } else {
-      this.isScrolled = false;
-    }
+    this.isScrolled = scrollPosition > 200;
   }
 }
