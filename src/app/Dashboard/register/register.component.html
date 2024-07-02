@@ -5,17 +5,17 @@ width: 100%;">
             <span id="close" (click)="close()"><i class="fa-solid fa-xmark fa-xl"></i></span>
             <h1><b>{{update != false? 'ACTUALIZA':  'NUEVA PELÍCULA'}}</b></h1>
             <div class="in">
-                <input type="text" id="title" [(ngModel)] = "titulo" placeholder="Título">
+                <input type="text" id="title" [(ngModel)] = "title" placeholder="Título">
                 <i class="fa-solid fa-video fa-xl"></i>
             </div>
             <br>
             <div class="in">
-                <input type="text" id="category" [(ngModel)] = "categoria" placeholder="Categoría">
+                <input type="text" id="category" [(ngModel)] = "category" placeholder="Categoría">
                 <i class="fa-solid fa-star fa-xl"></i>
             </div>
             <br>
             <div class="desc">
-                <textarea name="" id="description" [(ngModel)] = "descripcion" placeholder="Descripción"></textarea>
+                <textarea name="" id="description" [(ngModel)] = "description" placeholder="Descripción"></textarea>
             </div>
             <br>
             <div class="in" style="margin-top: 5%;">

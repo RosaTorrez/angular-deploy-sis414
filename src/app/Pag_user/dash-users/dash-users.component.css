@@ -1,3 +1,4 @@
+
 #content{
     display: flex;
     width: 100%;
@@ -7,10 +8,10 @@
     width: 20%;
     background: rgba(0, 0, 0, 0);
     margin: 1%;
-    box-shadow: 0 0 3px rgb(230, 14, 14);
+    box-shadow: 0 0 3px rgb(129, 127, 127);
 }
 
-app-dash-crud{
+app-delete-use{
     margin: 1%;
     position: relative;
     width: 78%;
@@ -27,17 +28,17 @@ app-dash-crud{
 #men i:hover{
     cursor: pointer;
     border: 2px solid white;
-    background-color: rgb(255, 127, 197);
+    background-color: aquamarine;
     padding: 7px;
     border-radius: 50px;
 }
 
-@media(max-width: 100px){
+@media(max-width: 1000px){
     #men{
         display: grid;
         z-index: 2;
     }
-    app-dash-crud{
+    app-delete-use{
         width: 100%;
         padding: 0;
     }

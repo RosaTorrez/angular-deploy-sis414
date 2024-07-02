@@ -1,27 +1,26 @@
-<div id="acount">
+<div id="create-acount">
     <form class="container" [formGroup]="registerForm" (ngSubmit)="register()">
-        <h1><b>Registar</b></h1>
+        <h1><b>REGISTRATE</b></h1>
         <div id="name" class="in" >
-            <input type="text" placeholder="Name(s)" formControlName="name" [(ngModel)]="name">
+            <input type="text" placeholder="Name(s)" formControlName="name" [(ngModel)]="name" #names>
             <i class="fa-solid fa-user fa-xl"></i>
         </div>
         <div *ngIf="registerForm.get('name')?.invalid && registerForm.get('name')?.touched" class="controls">
-            Se requiere el primer nombre.
+            Introduce tu primer nombre
         </div>
         <div id="lastName" class="in">
-            <input type="text" placeholder="last name(s)" formControlName="lastName" [(ngModel)]="lastName">
+            <input type="text" placeholder="last name(s)" formControlName="lastName" [(ngModel)]="lastName" #lastNames>
             <i class="fa-regular fa-user fa-xl"></i>
         </div>
         <div *ngIf="registerForm.get('lastName')?.invalid && registerForm.get('lastName')?.touched" class="controls">
-            Se requiere apellido.
+            Introduce tu Apellido
         </div>
         <div id="email" class="in">
-            <input type="email" placeholder="Email" formControlName="email" [(ngModel)]="email">
+            <input type="email" placeholder="Email" formControlName="email" [(ngModel)]="email" #emails>
             <i class="fa-solid fa-envelope fa-xl"></i>
         </div>
         <div *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched" class="controls">
-            Se requiere un correo electrónico válido.
-        </div>
+            Introduce un correo electrónico válido.        </div>
         <div id="password" class="in">
             <input type="password" placeholder="Password" formControlName="password">
             <i class="fa-solid fa-lock fa-xl"></i>

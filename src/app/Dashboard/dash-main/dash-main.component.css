@@ -3,13 +3,13 @@
     place-items: center;
     width: 15%;
     padding: 0;
-    padding-right: 5% ;
+    padding-right: 2% ;
 }
 .buttons button{
   color: black;
   border: 2px solid white;
-  width: 150px;
-  height: 40px;
+  width: 10px;
+  height: 10px;
   border-radius: 20px;
 }
 p{
@@ -17,27 +17,27 @@ p{
     text-align: justify;
 }
 .poster{
-    width: 20%;
+    width: 25%;
     display: grid;
     place-content: center;
 }
 .poster img{
-    width: 150px;
-    height: 200px;
+    width: 190px;
+    height: 300px;
     border-radius: 10px;
 }
 #dashboard{
     background-color: rgb(139, 2, 36);
     color: white;
     box-sizing: border-box;
-    border-radius: 5px;
+    border-radius: 20px;
     padding-top: 3%;
 }
 #content{
-    margin-top: 3%;
+    margin-top: 1%;
     display: flex;
-    width: 90%;
-    background: linear-gradient(to bottom, rgb(255, 13, 86), rgb(158, 7, 32), rgb(131, 4, 4));
+    width: -0.01%;
+    background: linear-gradient(to bottom, rgb(199, 124, 146), rgb(158, 7, 32), rgb(131, 4, 4));
     border-radius: 10px;
     box-sizing: border-box;
     padding: 2%;
@@ -57,7 +57,7 @@ p{
 }
 .info{
     display: grid;
-    width: 80%;
+    width: 10%;
 
 }
 #headMovies{
@@ -102,12 +102,12 @@ button:hover{
     box-shadow: 0 0 5px white;
 }
 
-@media(max-width: 1000px) {
+@media(max-width: 10px) {
     #dashboard{
         border-radius: 0;
     }
     #content{
-        width: 90%;
+        width: 20%;
         display: grid;
         justify-content: center;
         padding: 5% 0 5% 0;
@@ -118,13 +118,13 @@ button:hover{
         padding-left: 0;
     }
     .info{
-        width: 100%;
+        width: 10%;
         box-sizing: border-box;
     }
     .buttons{
         display: flex;
         place-content: center;
-        width: 100%;
+        width: 10%;
     }
 .poster img{
     width: 250px; border-radius: 10px; height: 350px;

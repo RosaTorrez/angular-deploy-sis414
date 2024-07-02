@@ -39,7 +39,7 @@ export class LoginComponent {
         console.log('Login exitoso:', userCredential);
         this.router.navigate(['/movies']); 
         // esta seccion hace que te Redireccione haci la pelicula
-      }, (error: any) => {
+      }, error => {
         console.error('Error en el inicio de sesión:', error);
         alert('Error en el inicio de sesión');
          // Mostrar mensaje de error al usuario

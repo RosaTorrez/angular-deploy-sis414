@@ -6,11 +6,16 @@ import { RegisterComponent } from '../../Dashboard/register/register.component';
 import { DashMenuComponent } from '../../Dashboard/dash-menu/dash-menu.component';
 import { CrudComponent } from '../../Dashboard/crud/crud.component';
 import { DashMainComponent } from '../../Dashboard/dash-main/dash-main.component';
-
 @Component({
   selector: 'app-dash',
   standalone: true,
-  imports: [DashMainComponent,MainComponent, HeaderComponent, FooterComponent, RegisterComponent,DashMenuComponent, CrudComponent],
+  imports: [DashMainComponent,
+            MainComponent, 
+            HeaderComponent, 
+            FooterComponent, 
+            RegisterComponent, 
+            DashMenuComponent, 
+            CrudComponent ],
   templateUrl:'./dash.component.html',
   styleUrl: './dash.component.css'
 })

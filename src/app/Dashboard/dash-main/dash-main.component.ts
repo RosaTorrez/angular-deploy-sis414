@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DashHeaderComponent } from '../dash-header/dash-header.component';
 import { FooterComponent } from '../../user/footer/footer.component';
 import { CommonModule } from '@angular/common';
@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
   templateUrl: './dash-main.component.html',
   styleUrl: './dash-main.component.css'
 })
-export class DashMainComponent {
+export class DashMainComponent implements OnInit {
   url = 'https://angularsis414-default-rtdb.firebaseio.com/';
   movies: any[] = [];
 

@@ -11,7 +11,7 @@
     box-shadow: 0 0 3px rgb(204, 22, 22);
 }
 
-app-main-dashboard{
+app-dash-main{
     margin: 1%;
     position: relative;
     width: 78%;
@@ -38,7 +38,7 @@ app-main-dashboard{
         display: grid;
         z-index: 2;
     }
-    app-main-dashboard{
+    app-dash-main{
         width: 100%;
         margin: 0;
     }

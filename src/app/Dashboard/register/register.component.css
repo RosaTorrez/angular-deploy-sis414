@@ -1,5 +1,5 @@
 #llenar{
-    color: rgb(214, 26, 85);
+    color: rgb(34, 21, 25);
     text-align: center;
 }
 
@@ -8,7 +8,7 @@ h1{
     text-align: center;
 }
 p{
-    color:rgb(75, 47, 50);
+    color:rgb(22, 19, 19);
     font-size: 1em;
     text-align: center;
 }
@@ -16,9 +16,10 @@ p{
     width: 100%;
     display: grid;
     place-items: center;
+    color: brown;
 }
 .container{
-    background: rgb(255, 255, 255);
+    background: rgba(204, 203, 203, 0.726);
     width: 550px;
     display: grid;
     place-items: center;
@@ -30,13 +31,13 @@ p{
 span{
     position: relative;
     width: 100%;
-    padding: 0;
+    padding: 20;
 }
 span i{
     position: absolute;
     right: 0%;
     top: 0%;
-    margin: 2%;
+    margin: 220%;
 }
 span i:hover{
     color: red;
@@ -44,16 +45,16 @@ span i:hover{
 }
 
 .in{
-    border-bottom: 2px solid rgba(0, 0, 0, 0.075);
+    border-bottom: 5px solid rgba(0, 0, 0, 0.075);
     width: 70%;
-    margin-top: 3%;
-    padding: 4px;
+    margin-top: 0.8%;
+    padding: 6px;
     display: flex;
     justify-content: center;
     place-items: center;
-    height: 35px;
+    height: 30px;
     border-radius: 10px;
-    background: rgba(0, 0, 0, 0);
+    background: rgba(211, 12, 12, 0.637);
     
 }
 input{
@@ -89,8 +90,6 @@ input:focus {
 textarea:focus{
     outline: none;
 }
-
-
 #submit{
     
     margin-top: 5%;
@@ -101,7 +100,7 @@ textarea:focus{
 }
 #submit:hover{
     border: none;
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.178);
+    box-shadow: 0 0 10px rgba(17, 15, 15, 0.178);
     transition: 0.5s;
     cursor: pointer;
 }

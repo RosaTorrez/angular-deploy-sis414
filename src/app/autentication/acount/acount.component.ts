@@ -38,7 +38,7 @@ export class AcountComponent {
     }, { validators: this.checkPasswords });
   }
 
-  // Método para validar que las contraseñas coincidan
+  //validar que las contraseñas coincidan
   checkPasswords(group: FormGroup) {
     let pass = group.get('password')?.value;
     let confirmPass = group.get('confirmPassword')?.value;
@@ -58,12 +58,13 @@ export class AcountComponent {
       });
     }
   }
-  async postUsers( group: FormGroup){
+  async postUsers(){
     const user = {
-      name : group.get('name')?.value,
-      lastName: group.get('lastname')?.value,
-      email: group.get('email')?.value
+      name : this.names.nativeElement.value,
+      lastName: this.lastNames.nativeElement.value,
+      email: this.emails.nativeElement.value
     }
+    console.log(user);
     
     await fetch(`${this.url}users.json`,{
       method: 'POST',

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { AuthService } from '../../auth/auth.service';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { User } from '@angular/fire/auth';
@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
   templateUrl: './dash-header.component.html',
   styleUrl: './dash-header.component.css'
 })
-export class DashHeaderComponent {
+export class DashHeaderComponent implements OnInit{
   url: string ='https://angularsis414-default-rtdb.firebaseio.com/';
   loggedInUserEmail: string | null = null;
   name: string | null = null;
@@ -41,11 +41,8 @@ export class DashHeaderComponent {
   @HostListener('window:scroll', [])
   onWindowScroll() {
     const scrollPosition = window.scrollY;
-    if (scrollPosition > 200) {
-      this.isScrolled = true;
-    } else {
-      this.isScrolled = false;
-    }
+    this.isScrolled = scrollPosition > 200;
+
   }
   user$: Observable<User | null>;
   private userState$: BehaviorSubject<User | null>;
@@ -70,7 +67,7 @@ export class DashHeaderComponent {
 
   logout() {
     this.authService.logout().subscribe(() => {
-      //this.router.navigate(['/login']);
+      this.router.navigate(['/login']);
       this.log = false;
       this.name = null;
     });
@@ -83,11 +80,13 @@ export class DashHeaderComponent {
     try {
       const resp = await fetch(`${this.url}users.json`);
       const data = await resp.json();
-      console.log(data); // Debugging: Log the API response
+      console.log(data); 
+      // Depuración: registra la respuesta de la API
       for (let key in data) {
         if (data[key].email.toLowerCase() === this.loggedInUserEmail?.toLocaleLowerCase()) {
           this.name = data[key].name;
-          break; // Exit loop once the user is found
+          // Salir del bucle una vez que se encuentra el usuario
+          break; 
         }
       }
     } catch (error) {

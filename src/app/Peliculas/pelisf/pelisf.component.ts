@@ -1,15 +1,17 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from '../../auth/auth.service';
 import { Router } from '@angular/router';
 import { DatabaseServiceService } from '../../services/database/database.service.service';
 import { LoadPagesServiceService } from '../../services/load/load-pages.service.service';
+import { HeaderComponent } from '../../user/header/header.component';
+import { FooterComponent } from '../../user/footer/footer.component';
 
 @Component({
   selector: 'app-pelisf',
   standalone: true,
-  imports: [FormsModule, CommonModule],
+  imports: [FormsModule, CommonModule, HeaderComponent,FooterComponent],
   templateUrl: './pelisf.component.html',
   styleUrl: './pelisf.component.css'
 })
@@ -18,8 +20,10 @@ export class PelisfComponent {
   movies: any[] = [];
   isLoggedIn: boolean = false;
   search: string = '';
-  p: number = 1; // Página actual
-  itemsPerPage: number = 16; // Cantidad de elementos por página
+  p: number = 1; 
+  // Página actual
+  itemsPerPage: number = 16; 
+  // Cantidad de elementos por página
   totalItems: number = 0;
 
   constructor(
@@ -38,8 +42,6 @@ export class PelisfComponent {
     await this.getTotalMovies();
     await this.loadMovies(this.p);
   }
-
-
   async loadMovies(page: number): Promise<void> {
     const start = (page - 1) * this.itemsPerPage;
     if (this.search != '') {
@@ -61,23 +63,48 @@ export class PelisfComponent {
     return Math.ceil(this.totalItems / this.itemsPerPage);
   }
   async onSearch(): Promise<void> {
-    this.p = 1; // Resetear a la primera página al hacer una nueva búsqueda
+    this.p = 1;
+     // Resetear a la primera página al hacer una nueva búsqueda
     await this.loadMovies(this.p);
   }
   reproductor(title: string, description: string, category: string, poster: string, video: string) {
     if (this.isLoggedIn) {
       const movie = {
-        title: title,
-        description: description,
-        category: category,
-        poster: poster,
-        video: video
+                    title: title,
+                    description: description,
+                    category: category,
+                    poster: poster,
+                    video: video
       };
       this.dataService.enviarObjeto(movie);
       localStorage.setItem('selectedMovie', JSON.stringify(movie));
-      this.router.navigate(['/descrip']);
+      this.router.navigate(['/reproductor']);
     } else {
       this.router.navigate(['/login']);
     }
   }
+  toggleMenu(): void {
+    const x = document.getElementById("myTopnav");
+    if (x !== null) {
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
+      }
+    }
+  }
+  isScrolled = false;
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    const scrollPosition = window.scrollY;
+
+    if (scrollPosition > 200) { 
+      // Cambia el fondo después de desplazarse 100px
+      this.isScrolled = true;
+    } else {
+      this.isScrolled = false;
+    }
+  }
 }
+

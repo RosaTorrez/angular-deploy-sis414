@@ -1,14 +1,46 @@
 #container{
-    background: rgb(1, 10, 22);
+    background: rgb(233, 228, 228);
     width: 100%;
     padding-bottom: 10%;
-    margin-bottom: 0;
+    margin-bottom: 60;
+}
+.principal{
+    background-color: rgb(87, 7, 7,389);
+    width: 100%;
+    min-height: 100vh;
+    margin: 40;
+    padding: 30%;
+    position: relative;
+    z-index: 0;
+    padding-top: 100px;
+}
+#search{
+  background-color: white;
+  border-radius: 15px;
+  width: 300px;
+  height: 40px;
+  display: flex;
+  place-items: center;
+  padding: 5px;
+  border: 1px solid black;
+
+}
+#search:hover{
+  border: 1px solid rgba(100, 96, 96, 0.5);
+}
+#search input{
+  width: 90%;
+  height: 95%;
+  border: none;
+}
+#search input:focus{
+  outline: none;
 }
 #content {
     display: grid;
     place-items: center;
     position: relative;
-    background-image: url('https://img.pikbest.com/wp/202345/popcorn-movies-the-movie-theatre-with-and-a-striped-cup_9586557.jpg!w700wp');
+    
     padding-top: 70px;
     padding-bottom: 70px;
     background-size: cover;
@@ -26,10 +58,10 @@
     width: 100%;
     height: 100%;
     background: 
-      linear-gradient(to top, rgba(1, 10, 22, 0.3), rgba(1, 10, 22, 0)),
-      linear-gradient(to bottom, rgba(1, 10, 22, 0.3), rgba(1, 10, 22, 0)),
-      linear-gradient(to left, rgba(1, 10, 22, 0.5), rgba(1, 10, 22, 0)),
-      linear-gradient(to right, rgba(1, 10, 22, 0.5), rgba(1, 10, 22, 0));
+      linear-gradient(to top, rgba(219, 209, 209, 0.685), rgba(1, 10, 22, 0)),
+      linear-gradient(to bottom, rgba(22, 1, 1, 0.3), rgba(1, 10, 22, 0)),
+      linear-gradient(to left, rgba(226, 2, 2, 0.5), rgba(1, 10, 22, 0)),
+      linear-gradient(to right, rgba(22, 1, 1, 0.5), rgba(1, 10, 22, 0));
     z-index: -2; /* Coloca el pseudo-elemento detrás del contenido */
     pointer-events: none; /* Permite que los clics pasen a través del pseudo-elemento */
   }
@@ -37,7 +69,7 @@
 #info{
     display: flex;
     width: 60%;
-    background: rgba(1, 10, 22, 0.5);
+    background: rgba(70, 5, 5, 0.5);
     border-radius: 5px;
     height: auto;
     padding: 2.5%;
@@ -60,16 +92,16 @@
     padding-top: 2.5%;
 }
 #video{
-    background-color: rgb(1, 10, 22);
+    background-color: rgb(22, 1, 1);
     width: 100%;
-    box-shadow: 0 0px 10px rgb(1, 10, 22),
-        0px -5px 20px rgb(1, 10, 22), 
-        0px -10px 40px rgb(1, 10, 22), 
-        0px 0px 60px rgb(1, 10, 22), 
-        0px 0 100px rgb(1, 10, 22),
-        0px 0px 100px rgb(1, 10, 22),
-        0px 0px 150px rgb(1, 10, 22), 
-        0px 0 150px rgb(1, 10, 22);
+    box-shadow: 0 0px 10px rgb(22, 1, 1),
+        0px -5px 20px rgb(22, 1, 1), 
+        0px -10px 40px rgb(22, 1, 1), 
+        0px 0px 60px rgb(22, 1, 1), 
+        0px 0 100px rgb(22, 1, 1),
+        0px 0px 100px rgb(22, 1, 1),
+        0px 0px 150px rgb(22, 1, 1), 
+        0px 0 150px rgb(22, 1, 1);
     position: relative;
     padding-top: 5%;
     display: grid;
@@ -86,7 +118,7 @@
     text-align: justify;
 }
 h3{
-    border-left: 2px solid aqua; color: white; padding-left: 12.5px;
+    border-left: 2px solid rgb(204, 0, 255); color: white; padding-left: 12.5px;
     text-align: left;
 }
 @media(max-width:700px){

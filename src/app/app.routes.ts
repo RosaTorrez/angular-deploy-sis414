@@ -9,6 +9,7 @@ import { DashComponent } from './Pag_user/dash/dash.component';
 import { PelisfComponent } from './Peliculas/pelisf/pelisf.component';
 import { DescripComponent } from './Peliculas/descrip/descrip.component';
 import { DeleteUseComponent } from './Dashboard/delete-use/delete-use.component';
+import { DashRepComponent } from './Pag_user/dash-rep/dash-rep.component';
 
 export const routes: Routes = [
   {path:'',redirectTo: '/home',pathMatch: 'full'},
@@ -20,6 +21,6 @@ export const routes: Routes = [
   {path: 'reset', component: PasswordComponent},
   {path: 'crud', component: DashCruComponent },
   { path: 'movies', component: PelisfComponent},
-  { path: 'reproductor', component: DescripComponent},
+  { path: 'reproductor', component: DashRepComponent},
   { path: 'users', component: DeleteUseComponent}
 ];

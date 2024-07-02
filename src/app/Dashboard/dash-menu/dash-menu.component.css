@@ -1,6 +1,6 @@
 #nav{
     display: flex;
-    background-color: #d1a9a9;
+    background-color: #d47d7d;
     position: fixed;
     width: 20%;
     font-size: 1em;
@@ -32,6 +32,7 @@ a{
 }
 
 #logo{
+    text-align: center;
     border-bottom: 20px solid rgba(128, 128, 128, 0);
 }
 .dash{

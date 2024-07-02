@@ -1,22 +1,29 @@
 <div id="container">
     <div id="content">
+        <div style="display: grid; place-items: center;">
+            <div id="search">
+                <input [(ngModel)]="search" (ngModelChange)="onSearch()" type="text" placeholder="Buscar Película">
+                <i class="fa-solid fa-magnifying-glass fa-xl" style="color: #540f03;"></i>
+            </div>
+        </div>
       <div id="info">
         <div id="poster"><img [src]="movie?.poster" alt=""></div>
         <div id="description">
           <p><b>TITULO:</b><br> {{ movie?.title }}</p>
           <p><b>CATEGORIA: </b><br>{{movie?.category}}</p>
-          <p><b>DESCRIPCION</b><br> {{ movie?.description }}</p>
+          <p><b>DESCRIPCIÓN: </b><br> {{ movie?.description }}</p>
         </div>
       </div>
+      
     </div>
     <div id="video">
       <iframe *ngIf="safeVideoUrl" [src]="safeVideoUrl" frameborder="0" width="640" height="360" allowfullscreen></iframe>
       <br>
       <div id="sinopsis">
-        <h3>Sinopsis: </h3>
+        <h3>RESUMEN CORTO: </h3>
         <p>{{movie?.description}}</p>
       </div>
     </div>
   </div>
-    
+    <app-footer></app-footer>
     

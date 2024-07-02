@@ -76,7 +76,7 @@ export class DashPelisComponent {
       };
       this.dataService.enviarObjeto(movie);
       localStorage.setItem('selectedMovie', JSON.stringify(movie));
-      this.router.navigate(['/reproductor']);
+      this.router.navigate(['/']);
     } else {
       this.router.navigate(['/login']);
     }

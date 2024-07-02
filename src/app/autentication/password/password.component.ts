@@ -35,7 +35,7 @@ export class PasswordComponent {
         },
         (error: any) => {
           console.error('ERROR al enviar el correo electrónico de restablecimiento:', error);
-          alert('Ha ocurrido un error al enviar el correo electrónico de restablecimiento. Por favor, intente una vez más.');
+          alert('Ha ocurrido un error. Por favor, intente una vez más.');
         }
       );
     }

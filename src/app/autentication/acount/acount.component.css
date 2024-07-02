@@ -7,18 +7,18 @@
 }
 .container{
     background: white;
-    width: 500px;
+    width: 490px;
     display: grid;
     place-items: center;
-    border: 1px solid white;
+    border: 10px solid rgba(146, 113, 22, 0.76);
     box-shadow: 0 0 5px black;
     border-radius: 20px;
-    padding: 5% 0 5% 0;
+    padding: 3% 0 5% 0;
 }
 .controls{
     height: 0;
     width: 70%;
-    color: red;
+    color: rgb(32, 27, 27);
 }
 h1{
     text-align: center;
@@ -26,7 +26,7 @@ h1{
     padding-bottom: 0;
 }
 .in{
-    border-bottom: 2px solid rgb(31, 30, 30);
+    border-bottom: 5px solid rgb(31, 30, 30);
     width: 70%;
     margin-top: 10%;
     padding: 4px;
@@ -40,15 +40,15 @@ h1{
     margin-top: 7.5%;
 }
 input{
-    width: 93%;
+    width: 80%;
     background: rgba(1, 15, 36, 0);
     border: none;
-    color: rgb(85, 85, 85);
+    color: rgb(0, 0, 0);
     font-size: 1em;
     padding: 1%;
 }
 input::placeholder{
-    color: gray;
+    color: rgb(209, 39, 39);
 }
 input:focus {
     outline: none; /* Asegúrate de que no haya contorno */
@@ -57,39 +57,39 @@ input:focus {
 }
 
 #button{
+    text-decoration: dotted;
     margin-top: 10%;
-    width: 100%;
+    width: 80%;
     display: grid;
     place-items: center;
 }
 .in:hover{
-    border: 2px solid rgb(31, 30, 30);
+    border: 2px solid rgb(146, 16, 16);
     border-radius: 10px;
     transition: 0.2s;
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(150, 165, 12, 0.247);
 }
 #button button{
     height: 40px;
     width: 70%;
-    border-radius: 30px;
+    border-radius: 50px;
     font-size: 1em;
 }
 #button button:hover{
     border: none;
-    box-shadow: 0 0 10px white;
-    transition: 0.5s;
+    box-shadow: 0 0 10px rgb(182, 121, 30);
+    transition: 0.1s;
     cursor: pointer;
 }
 i{
-    color: rgb(1, 1, 70);
+    color: rgb(70, 1, 1);
 }
 @media (max-width: 700px){
     .container{
-        width: 90%;
-    
+        width: 100%;
     }
     #create-acount{
-        height: 100vh;
+        height: 10vh;
         display: flex;
         justify-content: center;
     }

@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-dash-menu',
@@ -7,7 +7,7 @@ import { Component, ElementRef, ViewChild } from '@angular/core';
   templateUrl: './dash-menu.component.html',
   styleUrl: './dash-menu.component.css'
 })
-export class DashMenuComponent {
+export class DashMenuComponent implements AfterViewInit{
   //Se utilizará para manipular propiedades de estilo del elemento
   @ViewChild('myDiv') myDiv!: ElementRef;
   @ViewChild('icon') icon!: ElementRef;
