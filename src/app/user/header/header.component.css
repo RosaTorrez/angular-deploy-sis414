@@ -37,10 +37,13 @@
   font-size: 17px;
   margin: 0 5%;
   padding-top: 0;
+  background-color: rgba(2, 2, 2, 0.897);
+  z-index: auto;
 }
 
 .topnav a:hover {
   color: rgb(255, 123, 0);
+  background-color: rgb(201, 22, 22);
 }
 
 .topnav a.active {
@@ -75,7 +78,7 @@
 
   .topnav.responsive {
     position: relative;
-    background: rgba(68, 4, 4, 0.8);
+    background: rgba(168, 154, 154, 0.8);
   }
 
   .topnav.responsive .icon {
