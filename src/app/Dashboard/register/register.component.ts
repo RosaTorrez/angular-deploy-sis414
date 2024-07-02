@@ -13,12 +13,12 @@ import { DatabaseServiceService } from '../../services/database/database.service
 })
 export class RegisterComponent {
   url = 'https://angularsis414-default-rtdb.firebaseio.com/'
-  titulo: string = '';
-  categoria: string = '';
-  descripcion: string = '';
+  title: string = '';
+  category: string = '';
+  description: string = '';
   poster: string = '';
   video: string = '';
-  pelicula: any[] = [];
+  movies: any[] = [];
   posterValid: boolean | null = null;
   id: string | null = null;
   update: boolean |null = null;
@@ -37,21 +37,20 @@ export class RegisterComponent {
     });
     
   }
-
   async getMovie(){
     const res = await fetch(`${this.url}movies/${this.id}.json`);
     const mov = await res.json();
-    this.titulo = mov.title;
-    this.descripcion = mov.description;
-    this.categoria = mov.category;
+    this.title = mov.title;
+    this.description = mov.description;
+    this.category = mov.category;
     this.poster = mov.poster;
     this.video = mov.video;
   }
   async updateData(){
     const movie = {
-      title: this.titulo,
-      category: this.categoria,
-      description: this.descripcion,
+      title: this.title,
+      category: this.category,
+      description: this.description,
       poster: this.poster,
       video: this.video
 
@@ -92,7 +91,7 @@ export class RegisterComponent {
   }
 
   validForm(){
-    if(this.titulo=='' || this.categoria == '' || this.descripcion == '' || this.poster == '' || this.video == ''){
+    if(this.title=='' || this.category == '' || this.description == '' || this.poster == '' || this.video == ''){
       alert("Complete todos los campos");
     }else{
       this.checkImageExists();
@@ -100,9 +99,9 @@ export class RegisterComponent {
   }
   async postMovie(){
     const movie = {
-      title: this.titulo,
-      category: this.categoria,
-      description: this.descripcion,
+      title: this.title,
+      category: this.category,
+      description: this.description,
       poster: this.poster,
       video: this.video
 
@@ -118,10 +117,10 @@ export class RegisterComponent {
     this.redirect();
   }
   close(){
-    this.router.navigate(['/crud']);
+    this.router.navigate(['/movies-crud']);
     this.idService.changeId(null);
   }
   redirect(){
-    this.router.navigate(['/crud']);
+    this.router.navigate(['/movies-crud']);
   }
 }
